@@ -1,0 +1,44 @@
+{
+  "release_unchanged": true,
+  "timing_order_checks_passed": true,
+  "evaluation_observations": 1080,
+  "successful_histories": 162,
+  "public_selective_proofs_reverified": 486,
+  "archive_ledgers_reconciled": 162,
+  "balance": {
+    "N": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    },
+    "E": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    },
+    "D": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    }
+  },
+  "external_snapshot_is_public_preregistration": false,
+  "external_snapshot_is_trusted_timestamp": false,
+  "complete_full_archives_retained": false,
+  "scope": "Code and data consistency audit by executing assistant, not independent human review"
+}

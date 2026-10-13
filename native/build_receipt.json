@@ -1,0 +1,15 @@
+{
+  "source": "https://github.com/open-quantum-safe/liboqs",
+  "tag": "0.16.0",
+  "commit": "5a1a854b0dc9f2141bdc771c555ee60c37950183",
+  "library_sha256": "fe61ac8d1bba226d0be0797094acd89267d3e4d9838152026830bc5ee4c8b4ae",
+  "build_flags": [
+    "Release",
+    "shared",
+    "distribution dispatch",
+    "OpenSSL off",
+    "ML-DSA-65 and SLH_DSA_PURE_SHA2_192F"
+  ],
+  "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39"
+}

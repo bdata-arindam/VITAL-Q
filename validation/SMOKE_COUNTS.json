@@ -1,0 +1,14 @@
+{
+  "development": {
+    "rows": 864,
+    "sha256": "941ea9f1ea0c59a32ebace2aba503ee88ce505bf83561faff5e9422fae876343"
+  },
+  "evaluation": {
+    "rows": 1080,
+    "sha256": "d2c879d6bf2b22ed80a9615d5072a3165188e33d42555736165bea15215c75b0"
+  },
+  "histories": {
+    "rows": 162,
+    "sha256": "86a418b33a2ec5ddff5a72103d4055ce95c974a852f274b1e0252abcdec91ed2"
+  }
+}

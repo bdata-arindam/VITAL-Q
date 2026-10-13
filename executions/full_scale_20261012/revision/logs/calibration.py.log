@@ -1,0 +1,12 @@
+liboqs-python faulthandler is disabled
+calibration block 0 complete
+calibration block 1 complete
+calibration block 2 complete
+calibration block 3 complete
+calibration block 4 complete
+calibration block 5 complete
+calibration block 6 complete
+calibration block 7 complete
+calibration block 8 complete
+calibration block 9 complete
+{'features': ['ecdsa_keygen', 'ecdsa_sign', 'ecdsa_verify', 'mldsa_keygen', 'mldsa_sign', 'mldsa_verify', 'slhdsa_keygen', 'slhdsa_sign', 'slhdsa_verify', 'sha256_calls', 'sha256_bytes', 'sha384_calls', 'sha384_bytes', 'encode_objects', 'encode_bytes', 'decode_objects', 'decode_bytes', 'read_calls', 'read_bytes', 'write_calls', 'write_bytes', 'barrier_calls', 'subject_visits'], 'coefficients_seconds': [1.9868257e-05, 2.369256e-05, 8.599152325000002e-05, 3.3479760750000005e-05, 0.0001087087945, 3.0895314e-05, 0.0014746707625000002, 0.0389171125875, 0.0019529482624999997, 7.994315485730791e-07, 6.183279467148416e-10, 9.810435534406872e-07, 1.3278697269294997e-09, 1.4679384775210111e-06, 1.8102682721819192e-09, 1.7444519280569838e-06, 6.526284967103348e-11, 9.292135990256348e-07, 4.338647695124093e-11, 1.5625468199822499e-06, 4.589417318669443e-12, 1.8428749999999278e-07, 3.998438000000001e-08], 'diagnostics': {'rank': 23, 'condition_number': 2.0694009731938814, 'residual_l2_seconds': 0.0973652821037144}, 'calibration_sha256': '46620b6eda4be763bf965efecb3bb049cb4d8f9e8c7d08deed74872de0003f10', 'calibration_blocks': 10, 'calibration_rows': 360}

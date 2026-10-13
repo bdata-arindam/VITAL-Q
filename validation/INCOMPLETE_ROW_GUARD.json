@@ -1,0 +1,9 @@
+{
+  "incomplete_input_rejected": true,
+  "previous_checkpoint_preserved": true,
+  "detected_evaluation_rows": 1070,
+  "expected_evaluation_rows": 1080,
+  "failed_smoke_run_not_used_as_success": true,
+  "failure": "RuntimeError: Incomplete or duplicated measurements for smoke-f4dd95465ab8-v42-evaluation-100000-09-N: 9/12",
+  "cause": "Not established; available rows were not filled or fabricated"
+}

@@ -1,0 +1,130 @@
+{
+  "validation_affine": {
+    "columns": [
+      "intercept",
+      "validated_records",
+      "ecdsa_tokens",
+      "mldsa_tokens",
+      "slhdsa_tokens",
+      "enrollment_objects",
+      "merkle_internal_hashes"
+    ],
+    "coefficients": [
+      0.00021574668657462965,
+      1.5114784233998709e-05,
+      9.541817049054009e-05,
+      4.0877196578144776e-05,
+      0.0020852261872019505,
+      3.5973512182528834e-05,
+      3.413254752414128e-06
+    ],
+    "rank": 7,
+    "condition_number": 6.186858434861313,
+    "relative_fit_residual_l2": 0.2488020477431648,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  },
+  "without_intercept": {
+    "columns": [
+      "validated_records",
+      "ecdsa_tokens",
+      "mldsa_tokens",
+      "slhdsa_tokens",
+      "enrollment_objects",
+      "merkle_internal_hashes"
+    ],
+    "coefficients": [
+      1.2107000235488842e-05,
+      0.00012186495356546908,
+      2.9619846575027334e-05,
+      0.002021846996235184,
+      9.337850980743188e-05,
+      5.678828613215239e-06
+    ],
+    "rank": 6,
+    "condition_number": 5.485718118466155,
+    "relative_fit_residual_l2": 0.8675472190269442,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  },
+  "without_record_validation": {
+    "columns": [
+      "intercept",
+      "ecdsa_tokens",
+      "mldsa_tokens",
+      "slhdsa_tokens",
+      "enrollment_objects",
+      "merkle_internal_hashes"
+    ],
+    "coefficients": [
+      0.00016623678606272316,
+      0.00011058971240773043,
+      4.086733360151975e-05,
+      0.001953265922024467,
+      3.5935687850004556e-05,
+      1.3240415589286184e-05
+    ],
+    "rank": 6,
+    "condition_number": 4.00490313818721,
+    "relative_fit_residual_l2": 0.9265291728681206,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  },
+  "bytes_only": {
+    "columns": [
+      "proof_bytes"
+    ],
+    "coefficients": [
+      2.3453523086884973e-08
+    ],
+    "rank": 1,
+    "condition_number": 1.0,
+    "relative_fit_residual_l2": 2.892702848536923,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  },
+  "affine_bytes": {
+    "columns": [
+      "intercept",
+      "proof_bytes"
+    ],
+    "coefficients": [
+      0.00031444842845508586,
+      2.06461290131333e-08
+    ],
+    "rank": 2,
+    "condition_number": 1.3420855867263748,
+    "relative_fit_residual_l2": 1.980896368771162,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  },
+  "tokens_plus_bytes": {
+    "columns": [
+      "intercept",
+      "all_tokens",
+      "proof_bytes"
+    ],
+    "coefficients": [
+      0.0003077938975833943,
+      4.997711482401454e-06,
+      2.0137167226664035e-08
+    ],
+    "rank": 3,
+    "condition_number": 2.19242041863922,
+    "relative_fit_residual_l2": 1.9742543242777262,
+    "training_cells": 36,
+    "training_rows": 432,
+    "training_mode": "balanced",
+    "fit": "NNLS of cell medians with inverse median latency weights; no evaluation input"
+  }
+}

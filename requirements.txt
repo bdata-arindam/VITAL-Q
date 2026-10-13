@@ -1,0 +1,4 @@
+-r requirements-replay.txt
+cryptography==46.0.0
+liboqs-python==0.16.0
+pqcrypto==1.0.0

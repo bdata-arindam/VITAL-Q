@@ -1,0 +1,8 @@
+* text=auto eol=lf
+src/** -text
+data/** -text
+native/** -text
+notebooks/Published_Analysis_Executed.ipynb -text
+*.png binary
+*.zip binary
+executions/** -text

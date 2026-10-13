@@ -1,0 +1,17 @@
+{
+  "kind": "fresh full-scale reproduction",
+  "source_protocol": "VITAL_Q_LINUX_4_2",
+  "created_unix": 1791831387.9413283,
+  "sizes": {
+    "1000": 1000,
+    "10000": 10000,
+    "100000": 100000
+  },
+  "histories": 162,
+  "fresh_block_ids": true,
+  "checkpoint": "synchronous local filesystem ZIP after each completed history",
+  "scope": "Same source algorithms and measurement boundaries; new keys, inputs, timings and model calibration. Local checkpoint is not an independent backup or trusted timestamp.",
+  "observation_persistence": "Atomic checksummed journal of all 12 actual measurements per history, aggregate rebuilt from journals; workers stopped before commit",
+  "hosted_service_required": false,
+  "smoke_is_paper_replication": false
+}

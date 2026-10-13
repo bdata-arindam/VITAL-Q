@@ -1,0 +1,66 @@
+{
+  "protocol_id": "VITAL_Q_LINUX_4_2",
+  "purpose": "Evaluate a validation-aware affine model after correcting query timing; same public verifier and archive format",
+  "previous_evidence": "Version 3 data inspected and used to motivate this revision; 100000-record scale is previously exercised",
+  "development": {
+    "sizes": [
+      1000,
+      10000
+    ],
+    "matched_blocks_per_size": 12,
+    "histories": 72,
+    "queries_per_history_per_mode": 6
+  },
+  "evaluation": {
+    "sizes": [
+      100000
+    ],
+    "matched_blocks": 30,
+    "histories": 90,
+    "queries_per_history_per_mode": 6
+  },
+  "arms": [
+    "N",
+    "E",
+    "D"
+  ],
+  "renewals": [
+    0,
+    2,
+    5
+  ],
+  "queries": [
+    "full",
+    "selective"
+  ],
+  "primary_mode": "balanced",
+  "sensitivity_mode": "isolated fresh process per query with identical untimed primitive priming",
+  "order": "Six-row Williams design repeated twice per development size and five times at evaluation; all six arm orders balanced; mode order alternates by sequence parity and six-block cycle, exactly 15 balanced-first and 15 isolated-first evaluation blocks.",
+  "timing": "perf_counter_ns around one complete verify_proof call; returned-result checks and disposal after stop; proof construction, SHA256, IPC, process startup, crypto priming, file warming and explicit gc.collect excluded; normal verifier internal cleanup included",
+  "cache": "Warm sequential read immediately before every timed call in both modes",
+  "model": "Nonnegative affine full-query regression using intercept, validated record count, ECDSA token count, ML-DSA token count, SLH-DSA token count, enrollment objects and internal Merkle hashes",
+  "fit": "Balanced development cell medians, inverse-median-latency weights, identical rows and objective for affine model and all five comparator/ablation models. Microbenchmark model separately calibrated as historical-form comparator.",
+  "primary_acceptance": {
+    "minimum_cells_with_absolute_median_relative_error_at_most_15_percent": 15,
+    "minimum_per_arm_query_stratum": 1,
+    "must_beat_bytes_only_median_absolute_relative_error": true
+  },
+  "secondary": "Repeat point pass criterion in isolated mode; report conditional pointwise bootstrap intervals for each cell and paired bootstrap for median absolute relative error difference, corrected minus bytes-only.",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 2192026,
+    "unit": "matched evaluation block with both modes, all arms and checkpoints kept together",
+    "scope": "conditional on frozen development fit; no coefficient-refit uncertainty; fixed-grid comparison"
+  },
+  "exclusions": "No statistical outlier removal; failures explicit; incomplete cells fail; any post-freeze correction requires disclosed versioning and new affected evaluation",
+  "freeze": "Hash protocol, code, development measurements, calibration and fitted models; save separate hosted snapshot before evaluation. Private snapshot is not public preregistration or DOI. No independent human review implied.",
+  "retention": "All raw times, counts, bytes, statuses, barrier traces and per-history selective proofs plus public enrollment policies retained; full archives/proofs discarded after verified counts/hashes because available disk is about 4 GiB.",
+  "mhealth": "Historical secondary functional example only. No classifier performance or healthcare effectiveness inference in the primary study.",
+  "security_scope": "Real native signatures; honest enrollment and modeled clock; no trusted timestamps, source/device attestation, formal cryptographic novelty or physical power-loss test",
+  "new_protocol_created_unix": 1790354609.1659558,
+  "execution_isolation": "Private execution directory. All measurement workers stop before synchronous durable checkpoint after each history. Next history starts only after successful save.",
+  "development_restart": "An IPC import-notice failure produced zero rows; a later archive-size mismatch led to discarding the entire provisional development campaign. Logs preserved. No evaluation existed.",
+  "author_constraint": "Author stated DOI not required on 21 September 2026. A private hosted snapshot will still precede evaluation. No public preregistration is claimed.",
+  "recovery_amendment": "September 25: Intel session became unavailable; last observed 31 histories/372 measurements are unrecoverable and excluded. Fresh AMD calibration, development and evaluation; same model forms, objective, workloads and acceptance. Added checkpoint hook outside all timed regions.",
+  "interruption_recovery": "Durable checkpoints contain complete histories only. A resumed collection must preserve all saved rows, model coefficients, schedule and source hashes; record a session boundary and confirm identical CPU model, Python, library versions and native hash. A changed configuration requires a new cohort with fresh calibration and development. An unavailable in-progress history is disclosed and recollected; no available successful observations are excluded based on latency."
+}

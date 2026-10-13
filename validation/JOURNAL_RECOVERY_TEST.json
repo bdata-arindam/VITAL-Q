@@ -1,0 +1,6 @@
+{
+  "lost_aggregate_row_recovered_from_actual_recorded_journal": true,
+  "recovered_bytes_match_exactly": true,
+  "altered_journal_rejected": true,
+  "source": "12 unchanged supplied development observations; test copies only"
+}

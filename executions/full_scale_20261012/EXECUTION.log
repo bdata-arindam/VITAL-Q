@@ -1,0 +1,1175 @@
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python -c import oqs; assert all(x in oqs.get_enabled_sig_mechanisms() for x in ["ML-DSA-65","SLH_DSA_PURE_SHA2_192F"]); print("Native algorithms available")
+liboqs-python faulthandler is disabled
+Native algorithms available
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python -c from crypto_backend import Key
+import json
+from pathlib import Path
+rows=[]
+for alg in (1,2,3):
+ k=Key(alg);msg=b"VITAL-Q untimed worker primer";rows.append(dict(alg=alg,public=k.public.hex(),message=msg.hex(),signature=k.sign(msg).hex()));k.close()
+Path("crypto_primer.json").write_text(json.dumps(rows))
+
+liboqs-python faulthandler is disabled
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/test_timing.py
+..
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/qualification.py
+liboqs-python faulthandler is disabled
+{"total": 233, "passed": 233}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/calibration.py
+liboqs-python faulthandler is disabled
+calibration block 0 complete
+calibration block 1 complete
+calibration block 2 complete
+calibration block 3 complete
+calibration block 4 complete
+calibration block 5 complete
+calibration block 6 complete
+calibration block 7 complete
+calibration block 8 complete
+calibration block 9 complete
+{'features': ['ecdsa_keygen', 'ecdsa_sign', 'ecdsa_verify', 'mldsa_keygen', 'mldsa_sign', 'mldsa_verify', 'slhdsa_keygen', 'slhdsa_sign', 'slhdsa_verify', 'sha256_calls', 'sha256_bytes', 'sha384_calls', 'sha384_bytes', 'encode_objects', 'encode_bytes', 'decode_objects', 'decode_bytes', 'read_calls', 'read_bytes', 'write_calls', 'write_bytes', 'barrier_calls', 'subject_visits'], 'coefficients_seconds': [1.9868257e-05, 2.369256e-05, 8.599152325000002e-05, 3.3479760750000005e-05, 0.0001087087945, 3.0895314e-05, 0.0014746707625000002, 0.0389171125875, 0.0019529482624999997, 7.994315485730791e-07, 6.183279467148416e-10, 9.810435534406872e-07, 1.3278697269294997e-09, 1.4679384775210111e-06, 1.8102682721819192e-09, 1.7444519280569838e-06, 6.526284967103348e-11, 9.292135990256348e-07, 4.338647695124093e-11, 1.5625468199822499e-06, 4.589417318669443e-12, 1.8428749999999278e-07, 3.998438000000001e-08], 'diagnostics': {'rank': 23, 'condition_number': 2.0694009731938814, 'residual_l2_seconds': 0.0973652821037144}, 'calibration_sha256': '46620b6eda4be763bf965efecb3bb049cb4d8f9e8c7d08deed74872de0003f10', 'calibration_blocks': 10, 'calibration_rows': 360}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/scripts/checkpoint.py /tmp/vital_q_full_scale_20261012/revision
+{"checkpoint": "ok", "files": 27}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/campaign.py development
+liboqs-python faulthandler is disabled
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-00-N", "status": "ok", "elapsed_seconds": 2.77, "verification_seconds": 1.28}
+{"checkpoint": "ok", "files": 37}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-00-E", "status": "ok", "elapsed_seconds": 1.05, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 43}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-00-D", "status": "ok", "elapsed_seconds": 1.52, "verification_seconds": 0.26}
+{"checkpoint": "ok", "files": 49}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-01-N", "status": "ok", "elapsed_seconds": 2.82, "verification_seconds": 1.32}
+{"checkpoint": "ok", "files": 55}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-01-D", "status": "ok", "elapsed_seconds": 1.32, "verification_seconds": 0.25}
+{"checkpoint": "ok", "files": 61}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-01-E", "status": "ok", "elapsed_seconds": 0.97, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 67}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-02-E", "status": "ok", "elapsed_seconds": 1.03, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 73}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-02-N", "status": "ok", "elapsed_seconds": 2.72, "verification_seconds": 1.2}
+{"checkpoint": "ok", "files": 79}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-02-D", "status": "ok", "elapsed_seconds": 1.5, "verification_seconds": 0.25}
+{"checkpoint": "ok", "files": 85}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-03-E", "status": "ok", "elapsed_seconds": 0.94, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 91}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-03-D", "status": "ok", "elapsed_seconds": 1.33, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 97}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-03-N", "status": "ok", "elapsed_seconds": 2.83, "verification_seconds": 1.36}
+{"checkpoint": "ok", "files": 103}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-04-D", "status": "ok", "elapsed_seconds": 1.43, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 109}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-04-N", "status": "ok", "elapsed_seconds": 2.92, "verification_seconds": 1.34}
+{"checkpoint": "ok", "files": 115}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-04-E", "status": "ok", "elapsed_seconds": 1.07, "verification_seconds": 0.13}
+{"checkpoint": "ok", "files": 121}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-05-D", "status": "ok", "elapsed_seconds": 1.35, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 127}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-05-E", "status": "ok", "elapsed_seconds": 1.06, "verification_seconds": 0.13}
+{"checkpoint": "ok", "files": 133}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-05-N", "status": "ok", "elapsed_seconds": 2.68, "verification_seconds": 1.28}
+{"checkpoint": "ok", "files": 139}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-06-N", "status": "ok", "elapsed_seconds": 2.72, "verification_seconds": 1.28}
+{"checkpoint": "ok", "files": 145}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-06-E", "status": "ok", "elapsed_seconds": 0.97, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 151}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-06-D", "status": "ok", "elapsed_seconds": 1.48, "verification_seconds": 0.26}
+{"checkpoint": "ok", "files": 157}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-07-N", "status": "ok", "elapsed_seconds": 2.87, "verification_seconds": 1.32}
+{"checkpoint": "ok", "files": 163}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-07-D", "status": "ok", "elapsed_seconds": 1.3, "verification_seconds": 0.21}
+{"checkpoint": "ok", "files": 169}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-07-E", "status": "ok", "elapsed_seconds": 0.98, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 175}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-08-E", "status": "ok", "elapsed_seconds": 0.96, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 181}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-08-N", "status": "ok", "elapsed_seconds": 2.7, "verification_seconds": 1.33}
+{"checkpoint": "ok", "files": 187}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-08-D", "status": "ok", "elapsed_seconds": 1.37, "verification_seconds": 0.27}
+{"checkpoint": "ok", "files": 193}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-09-E", "status": "ok", "elapsed_seconds": 1.07, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 199}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-09-D", "status": "ok", "elapsed_seconds": 1.4, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 205}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-09-N", "status": "ok", "elapsed_seconds": 2.78, "verification_seconds": 1.31}
+{"checkpoint": "ok", "files": 211}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-10-D", "status": "ok", "elapsed_seconds": 1.32, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 217}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-10-N", "status": "ok", "elapsed_seconds": 2.65, "verification_seconds": 1.23}
+{"checkpoint": "ok", "files": 223}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-10-E", "status": "ok", "elapsed_seconds": 0.9, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 229}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-11-D", "status": "ok", "elapsed_seconds": 1.39, "verification_seconds": 0.24}
+{"checkpoint": "ok", "files": 235}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-11-E", "status": "ok", "elapsed_seconds": 1.07, "verification_seconds": 0.12}
+{"checkpoint": "ok", "files": 241}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-1000-11-N", "status": "ok", "elapsed_seconds": 2.81, "verification_seconds": 1.27}
+{"checkpoint": "ok", "files": 247}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-00-N", "status": "ok", "elapsed_seconds": 18.59, "verification_seconds": 12.02}
+{"checkpoint": "ok", "files": 253}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-00-E", "status": "ok", "elapsed_seconds": 2.18, "verification_seconds": 1.12}
+{"checkpoint": "ok", "files": 259}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-00-D", "status": "ok", "elapsed_seconds": 3.3, "verification_seconds": 1.55}
+{"checkpoint": "ok", "files": 265}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-01-N", "status": "ok", "elapsed_seconds": 18.49, "verification_seconds": 11.95}
+{"checkpoint": "ok", "files": 271}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-01-D", "status": "ok", "elapsed_seconds": 3.28, "verification_seconds": 1.55}
+{"checkpoint": "ok", "files": 277}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-01-E", "status": "ok", "elapsed_seconds": 2.05, "verification_seconds": 1.1}
+{"checkpoint": "ok", "files": 283}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-02-E", "status": "ok", "elapsed_seconds": 2.15, "verification_seconds": 1.1}
+{"checkpoint": "ok", "files": 289}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-02-N", "status": "ok", "elapsed_seconds": 18.51, "verification_seconds": 12.15}
+{"checkpoint": "ok", "files": 295}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-02-D", "status": "ok", "elapsed_seconds": 3.28, "verification_seconds": 1.51}
+{"checkpoint": "ok", "files": 301}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-03-E", "status": "ok", "elapsed_seconds": 2.05, "verification_seconds": 1.08}
+{"checkpoint": "ok", "files": 307}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-03-D", "status": "ok", "elapsed_seconds": 3.17, "verification_seconds": 1.53}
+{"checkpoint": "ok", "files": 313}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-03-N", "status": "ok", "elapsed_seconds": 18.39, "verification_seconds": 11.92}
+{"checkpoint": "ok", "files": 319}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-04-D", "status": "ok", "elapsed_seconds": 3.34, "verification_seconds": 1.56}
+{"checkpoint": "ok", "files": 325}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-04-N", "status": "ok", "elapsed_seconds": 18.8, "verification_seconds": 12.11}
+{"checkpoint": "ok", "files": 331}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-04-E", "status": "ok", "elapsed_seconds": 2.28, "verification_seconds": 1.15}
+{"checkpoint": "ok", "files": 337}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-05-D", "status": "ok", "elapsed_seconds": 3.37, "verification_seconds": 1.6}
+{"checkpoint": "ok", "files": 343}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-05-E", "status": "ok", "elapsed_seconds": 2.15, "verification_seconds": 1.1}
+{"checkpoint": "ok", "files": 349}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-05-N", "status": "ok", "elapsed_seconds": 19.27, "verification_seconds": 12.45}
+{"checkpoint": "ok", "files": 355}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-06-N", "status": "ok", "elapsed_seconds": 18.4, "verification_seconds": 11.85}
+{"checkpoint": "ok", "files": 361}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-06-E", "status": "ok", "elapsed_seconds": 2.23, "verification_seconds": 1.19}
+{"checkpoint": "ok", "files": 367}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-06-D", "status": "ok", "elapsed_seconds": 3.43, "verification_seconds": 1.6}
+{"checkpoint": "ok", "files": 373}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-07-N", "status": "ok", "elapsed_seconds": 18.94, "verification_seconds": 11.91}
+{"checkpoint": "ok", "files": 379}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-07-D", "status": "ok", "elapsed_seconds": 3.38, "verification_seconds": 1.55}
+{"checkpoint": "ok", "files": 385}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-07-E", "status": "ok", "elapsed_seconds": 2.17, "verification_seconds": 1.11}
+{"checkpoint": "ok", "files": 391}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-08-E", "status": "ok", "elapsed_seconds": 2.11, "verification_seconds": 1.14}
+{"checkpoint": "ok", "files": 397}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-08-N", "status": "ok", "elapsed_seconds": 19.0, "verification_seconds": 12.24}
+{"checkpoint": "ok", "files": 403}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-08-D", "status": "ok", "elapsed_seconds": 3.27, "verification_seconds": 1.55}
+{"checkpoint": "ok", "files": 409}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-09-E", "status": "ok", "elapsed_seconds": 2.19, "verification_seconds": 1.1}
+{"checkpoint": "ok", "files": 415}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-09-D", "status": "ok", "elapsed_seconds": 3.29, "verification_seconds": 1.51}
+{"checkpoint": "ok", "files": 421}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-09-N", "status": "ok", "elapsed_seconds": 18.85, "verification_seconds": 12.08}
+{"checkpoint": "ok", "files": 427}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-10-D", "status": "ok", "elapsed_seconds": 3.32, "verification_seconds": 1.57}
+{"checkpoint": "ok", "files": 433}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-10-N", "status": "ok", "elapsed_seconds": 19.04, "verification_seconds": 12.55}
+{"checkpoint": "ok", "files": 439}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-10-E", "status": "ok", "elapsed_seconds": 2.09, "verification_seconds": 1.13}
+{"checkpoint": "ok", "files": 445}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-11-D", "status": "ok", "elapsed_seconds": 3.38, "verification_seconds": 1.51}
+{"checkpoint": "ok", "files": 451}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-11-E", "status": "ok", "elapsed_seconds": 2.27, "verification_seconds": 1.18}
+{"checkpoint": "ok", "files": 457}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-development-10000-11-N", "status": "ok", "elapsed_seconds": 19.26, "verification_seconds": 12.39}
+{"checkpoint": "ok", "files": 463}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/campaign.py evaluation
+liboqs-python faulthandler is disabled
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-00-N", "status": "ok", "elapsed_seconds": 183.37, "verification_seconds": 124.54}
+{"checkpoint": "ok", "files": 476}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-00-E", "status": "ok", "elapsed_seconds": 13.91, "verification_seconds": 11.41}
+{"checkpoint": "ok", "files": 482}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-00-D", "status": "ok", "elapsed_seconds": 23.45, "verification_seconds": 14.37}
+{"checkpoint": "ok", "files": 488}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-01-N", "status": "ok", "elapsed_seconds": 183.19, "verification_seconds": 123.77}
+{"checkpoint": "ok", "files": 494}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-01-D", "status": "ok", "elapsed_seconds": 23.14, "verification_seconds": 14.58}
+{"checkpoint": "ok", "files": 500}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-01-E", "status": "ok", "elapsed_seconds": 12.92, "verification_seconds": 10.61}
+{"checkpoint": "ok", "files": 506}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-02-E", "status": "ok", "elapsed_seconds": 12.89, "verification_seconds": 10.6}
+{"checkpoint": "ok", "files": 512}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-02-N", "status": "ok", "elapsed_seconds": 186.7, "verification_seconds": 127.69}
+{"checkpoint": "ok", "files": 518}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-02-D", "status": "ok", "elapsed_seconds": 23.21, "verification_seconds": 14.52}
+{"checkpoint": "ok", "files": 524}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-03-E", "status": "ok", "elapsed_seconds": 13.53, "verification_seconds": 11.14}
+{"checkpoint": "ok", "files": 530}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-03-D", "status": "ok", "elapsed_seconds": 22.89, "verification_seconds": 14.63}
+{"checkpoint": "ok", "files": 536}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-03-N", "status": "ok", "elapsed_seconds": 182.61, "verification_seconds": 124.42}
+{"checkpoint": "ok", "files": 542}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-04-D", "status": "ok", "elapsed_seconds": 23.28, "verification_seconds": 14.91}
+{"checkpoint": "ok", "files": 548}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-04-N", "status": "ok", "elapsed_seconds": 183.11, "verification_seconds": 124.45}
+{"checkpoint": "ok", "files": 554}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-04-E", "status": "ok", "elapsed_seconds": 13.35, "verification_seconds": 10.9}
+{"checkpoint": "ok", "files": 560}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-05-D", "status": "ok", "elapsed_seconds": 24.09, "verification_seconds": 15.65}
+{"checkpoint": "ok", "files": 566}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-05-E", "status": "ok", "elapsed_seconds": 13.65, "verification_seconds": 11.27}
+{"checkpoint": "ok", "files": 572}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-05-N", "status": "ok", "elapsed_seconds": 180.97, "verification_seconds": 122.41}
+{"checkpoint": "ok", "files": 578}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-06-N", "status": "ok", "elapsed_seconds": 186.66, "verification_seconds": 127.33}
+{"checkpoint": "ok", "files": 584}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-06-E", "status": "ok", "elapsed_seconds": 13.65, "verification_seconds": 11.29}
+{"checkpoint": "ok", "files": 590}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-06-D", "status": "ok", "elapsed_seconds": 23.77, "verification_seconds": 15.28}
+{"checkpoint": "ok", "files": 596}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-07-N", "status": "ok", "elapsed_seconds": 183.15, "verification_seconds": 124.12}
+{"checkpoint": "ok", "files": 602}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-07-D", "status": "ok", "elapsed_seconds": 23.13, "verification_seconds": 14.64}
+{"checkpoint": "ok", "files": 608}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-07-E", "status": "ok", "elapsed_seconds": 13.69, "verification_seconds": 11.25}
+{"checkpoint": "ok", "files": 614}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-08-E", "status": "ok", "elapsed_seconds": 13.64, "verification_seconds": 11.3}
+{"checkpoint": "ok", "files": 620}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-08-N", "status": "ok", "elapsed_seconds": 185.46, "verification_seconds": 125.15}
+{"checkpoint": "ok", "files": 626}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-08-D", "status": "ok", "elapsed_seconds": 23.2, "verification_seconds": 14.83}
+{"checkpoint": "ok", "files": 632}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-09-E", "status": "ok", "elapsed_seconds": 13.74, "verification_seconds": 11.14}
+{"checkpoint": "ok", "files": 638}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-09-D", "status": "ok", "elapsed_seconds": 23.72, "verification_seconds": 14.83}
+{"checkpoint": "ok", "files": 644}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-09-N", "status": "ok", "elapsed_seconds": 190.23, "verification_seconds": 127.8}
+{"checkpoint": "ok", "files": 650}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-10-D", "status": "ok", "elapsed_seconds": 23.1, "verification_seconds": 14.62}
+{"checkpoint": "ok", "files": 656}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-10-N", "status": "ok", "elapsed_seconds": 184.2, "verification_seconds": 124.18}
+{"checkpoint": "ok", "files": 662}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-10-E", "status": "ok", "elapsed_seconds": 13.48, "verification_seconds": 11.11}
+{"checkpoint": "ok", "files": 668}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-11-D", "status": "ok", "elapsed_seconds": 23.07, "verification_seconds": 14.65}
+{"checkpoint": "ok", "files": 674}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-11-E", "status": "ok", "elapsed_seconds": 14.11, "verification_seconds": 11.54}
+{"checkpoint": "ok", "files": 680}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-11-N", "status": "ok", "elapsed_seconds": 186.53, "verification_seconds": 127.02}
+{"checkpoint": "ok", "files": 686}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-12-N", "status": "ok", "elapsed_seconds": 180.45, "verification_seconds": 121.27}
+{"checkpoint": "ok", "files": 692}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-12-E", "status": "ok", "elapsed_seconds": 14.33, "verification_seconds": 11.81}
+{"checkpoint": "ok", "files": 698}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-12-D", "status": "ok", "elapsed_seconds": 23.88, "verification_seconds": 14.96}
+{"checkpoint": "ok", "files": 704}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-13-N", "status": "ok", "elapsed_seconds": 190.52, "verification_seconds": 130.25}
+{"checkpoint": "ok", "files": 710}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-13-D", "status": "ok", "elapsed_seconds": 24.49, "verification_seconds": 15.66}
+{"checkpoint": "ok", "files": 716}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-13-E", "status": "ok", "elapsed_seconds": 13.69, "verification_seconds": 11.28}
+{"checkpoint": "ok", "files": 722}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-14-E", "status": "ok", "elapsed_seconds": 13.96, "verification_seconds": 11.47}
+{"checkpoint": "ok", "files": 728}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-14-N", "status": "ok", "elapsed_seconds": 187.53, "verification_seconds": 125.77}
+{"checkpoint": "ok", "files": 734}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-14-D", "status": "ok", "elapsed_seconds": 23.13, "verification_seconds": 14.63}
+{"checkpoint": "ok", "files": 740}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-15-E", "status": "ok", "elapsed_seconds": 13.44, "verification_seconds": 11.12}
+{"checkpoint": "ok", "files": 746}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-15-D", "status": "ok", "elapsed_seconds": 23.49, "verification_seconds": 15.2}
+{"checkpoint": "ok", "files": 752}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-15-N", "status": "ok", "elapsed_seconds": 182.89, "verification_seconds": 122.54}
+{"checkpoint": "ok", "files": 758}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-16-D", "status": "ok", "elapsed_seconds": 22.7, "verification_seconds": 14.3}
+{"checkpoint": "ok", "files": 764}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-16-N", "status": "ok", "elapsed_seconds": 180.93, "verification_seconds": 123.13}
+{"checkpoint": "ok", "files": 770}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-16-E", "status": "ok", "elapsed_seconds": 13.84, "verification_seconds": 11.29}
+{"checkpoint": "ok", "files": 776}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-17-D", "status": "ok", "elapsed_seconds": 23.22, "verification_seconds": 14.87}
+{"checkpoint": "ok", "files": 782}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-17-E", "status": "ok", "elapsed_seconds": 13.65, "verification_seconds": 11.13}
+{"checkpoint": "ok", "files": 788}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-17-N", "status": "ok", "elapsed_seconds": 182.63, "verification_seconds": 123.09}
+{"checkpoint": "ok", "files": 794}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-18-N", "status": "ok", "elapsed_seconds": 186.3, "verification_seconds": 127.34}
+{"checkpoint": "ok", "files": 800}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-18-E", "status": "ok", "elapsed_seconds": 13.44, "verification_seconds": 11.06}
+{"checkpoint": "ok", "files": 806}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-18-D", "status": "ok", "elapsed_seconds": 23.26, "verification_seconds": 14.8}
+{"checkpoint": "ok", "files": 812}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-19-N", "status": "ok", "elapsed_seconds": 185.02, "verification_seconds": 124.02}
+{"checkpoint": "ok", "files": 818}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-19-D", "status": "ok", "elapsed_seconds": 23.43, "verification_seconds": 14.84}
+{"checkpoint": "ok", "files": 824}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-19-E", "status": "ok", "elapsed_seconds": 14.09, "verification_seconds": 11.55}
+{"checkpoint": "ok", "files": 830}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-20-E", "status": "ok", "elapsed_seconds": 13.59, "verification_seconds": 11.13}
+{"checkpoint": "ok", "files": 836}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-20-N", "status": "ok", "elapsed_seconds": 186.47, "verification_seconds": 126.23}
+{"checkpoint": "ok", "files": 842}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-20-D", "status": "ok", "elapsed_seconds": 24.45, "verification_seconds": 15.53}
+{"checkpoint": "ok", "files": 848}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-21-E", "status": "ok", "elapsed_seconds": 13.42, "verification_seconds": 10.92}
+{"checkpoint": "ok", "files": 854}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-21-D", "status": "ok", "elapsed_seconds": 23.39, "verification_seconds": 14.91}
+{"checkpoint": "ok", "files": 860}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-21-N", "status": "ok", "elapsed_seconds": 184.89, "verification_seconds": 125.27}
+{"checkpoint": "ok", "files": 866}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-22-D", "status": "ok", "elapsed_seconds": 23.6, "verification_seconds": 14.99}
+{"checkpoint": "ok", "files": 872}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-22-N", "status": "ok", "elapsed_seconds": 188.49, "verification_seconds": 126.74}
+{"checkpoint": "ok", "files": 878}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-22-E", "status": "ok", "elapsed_seconds": 15.14, "verification_seconds": 12.47}
+{"checkpoint": "ok", "files": 884}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-23-D", "status": "ok", "elapsed_seconds": 23.14, "verification_seconds": 14.56}
+{"checkpoint": "ok", "files": 890}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-23-E", "status": "ok", "elapsed_seconds": 13.13, "verification_seconds": 10.67}
+{"checkpoint": "ok", "files": 896}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-23-N", "status": "ok", "elapsed_seconds": 187.77, "verification_seconds": 128.65}
+{"checkpoint": "ok", "files": 902}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-24-N", "status": "ok", "elapsed_seconds": 184.23, "verification_seconds": 125.33}
+{"checkpoint": "ok", "files": 908}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-24-E", "status": "ok", "elapsed_seconds": 13.86, "verification_seconds": 11.36}
+{"checkpoint": "ok", "files": 914}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-24-D", "status": "ok", "elapsed_seconds": 23.37, "verification_seconds": 14.88}
+{"checkpoint": "ok", "files": 920}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-25-N", "status": "ok", "elapsed_seconds": 186.34, "verification_seconds": 126.38}
+{"checkpoint": "ok", "files": 926}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-25-D", "status": "ok", "elapsed_seconds": 24.14, "verification_seconds": 15.41}
+{"checkpoint": "ok", "files": 932}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-25-E", "status": "ok", "elapsed_seconds": 13.6, "verification_seconds": 11.01}
+{"checkpoint": "ok", "files": 938}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-26-E", "status": "ok", "elapsed_seconds": 13.19, "verification_seconds": 10.81}
+{"checkpoint": "ok", "files": 944}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-26-N", "status": "ok", "elapsed_seconds": 184.05, "verification_seconds": 125.0}
+{"checkpoint": "ok", "files": 950}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-26-D", "status": "ok", "elapsed_seconds": 23.27, "verification_seconds": 14.68}
+{"checkpoint": "ok", "files": 956}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-27-E", "status": "ok", "elapsed_seconds": 13.66, "verification_seconds": 11.21}
+{"checkpoint": "ok", "files": 962}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-27-D", "status": "ok", "elapsed_seconds": 23.4, "verification_seconds": 14.97}
+{"checkpoint": "ok", "files": 968}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-27-N", "status": "ok", "elapsed_seconds": 182.0, "verification_seconds": 123.46}
+{"checkpoint": "ok", "files": 974}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-28-D", "status": "ok", "elapsed_seconds": 23.31, "verification_seconds": 14.8}
+{"checkpoint": "ok", "files": 980}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-28-N", "status": "ok", "elapsed_seconds": 184.15, "verification_seconds": 123.29}
+{"checkpoint": "ok", "files": 986}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-28-E", "status": "ok", "elapsed_seconds": 14.09, "verification_seconds": 11.55}
+{"checkpoint": "ok", "files": 992}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-29-D", "status": "ok", "elapsed_seconds": 23.36, "verification_seconds": 14.81}
+{"checkpoint": "ok", "files": 998}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-29-E", "status": "ok", "elapsed_seconds": 13.45, "verification_seconds": 11.06}
+{"checkpoint": "ok", "files": 1004}
+liboqs-python faulthandler is disabled
+{"history": "fresh-b4d6a8607b9b-v42-evaluation-100000-29-N", "status": "ok", "elapsed_seconds": 182.77, "verification_seconds": 123.37}
+{"checkpoint": "ok", "files": 1010}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/analysis_v4.py analyze
+{
+  "balanced": {
+    "cells": [
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000351084,
+        "predicted_median_seconds": 0.00034341663530256146,
+        "relative_error": -0.021839117411897233,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.06982820742703359,
+          0.0012628458878093543
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000598007,
+        "predicted_median_seconds": 0.0005148574403685893,
+        "relative_error": -0.13904445872943072,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.21411948177269044,
+          -0.05606605999473937
+        ],
+        "interval_pass": false
+      },
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000741348,
+        "predicted_median_seconds": 0.0007720186479676311,
+        "relative_error": 0.04137145843467732,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.028251583656604563,
+          0.07851850895292797
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 11.296734473499999,
+        "predicted_median_seconds": 11.040968019566527,
+        "relative_error": -0.02264074229003535,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.030759271104532793,
+          -0.014649220163017196
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 19.612477816499997,
+        "predicted_median_seconds": 19.209163212541515,
+        "relative_error": -0.020564184073629515,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.03081451762625984,
+          -0.005692607788168253
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 31.382429539,
+        "predicted_median_seconds": 31.46145600200399,
+        "relative_error": 0.0025181754301649133,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.010803922138973198,
+          0.0092535983822782
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0004113155,
+        "predicted_median_seconds": 0.00038941527240640266,
+        "relative_error": -0.053244352798757486,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.10618354329835479,
+          0.010518090539292082
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000607827,
+        "predicted_median_seconds": 0.0005608560774724306,
+        "relative_error": -0.07727679508736768,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.14021854558098343,
+          -0.02016415593270665
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000830147,
+        "predicted_median_seconds": 0.0008180172850714724,
+        "relative_error": -0.014611526547138839,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.06561965918515028,
+          0.027142463496997636
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.869454123,
+        "predicted_median_seconds": 1.8808643155618343,
+        "relative_error": 0.006103488939072723,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.014248958847290102,
+          0.03623144989443805
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.8405097195,
+        "predicted_median_seconds": 1.8829961016708743,
+        "relative_error": 0.023084030320913666,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.0031649234198147798,
+          0.05347125801695766
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.8291399830000001,
+        "predicted_median_seconds": 1.886193780834434,
+        "relative_error": 0.031191597343391442,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.004894322317343825,
+          0.04391178908130434
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.002567036,
+        "predicted_median_seconds": 0.0026180254453877943,
+        "relative_error": 0.01986315945229998,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.05419830162407008,
+          0.04636346084260392
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0075536355,
+        "predicted_median_seconds": 0.007154689322208922,
+        "relative_error": -0.052815121644548206,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.0921567153744038,
+          0.010341348826695983
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0138483115,
+        "predicted_median_seconds": 0.013959685137440614,
+        "relative_error": 0.008042398341531663,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.02349207617363017,
+          0.039059595426815
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.3299318405,
+        "predicted_median_seconds": 2.3175786323213448,
+        "relative_error": -0.005301961183553027,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.03192413771925121,
+          0.01215134035797134
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.4318813195,
+        "predicted_median_seconds": 2.4266867612066516,
+        "relative_error": -0.002136024587917133,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.030024524842037874,
+          0.011580067199484805
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.576826057,
+        "predicted_median_seconds": 2.590348954534611,
+        "relative_error": 0.005247889161115818,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.010751294714165568,
+          0.028334005143795464
+        ],
+        "interval_pass": true
+      }
+    ],
+    "point_passes": 18,
+    "median_absolute_relative_error": 0.021201650742763374,
+    "max_absolute_relative_error": 0.13904445872943072,
+    "negative_errors": 10,
+    "every_stratum_has_pass": true,
+    "interval_passes": 17
+  },
+  "isolated": {
+    "cells": [
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0003955435,
+        "predicted_median_seconds": 0.00034341663530256146,
+        "relative_error": -0.13178541600971458,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.20470706476654404,
+          -0.018367878966788057
+        ],
+        "interval_pass": false
+      },
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0005401945000000001,
+        "predicted_median_seconds": 0.0005148574403685893,
+        "relative_error": -0.04690358682180355,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.12895030534331509,
+          0.015388760712288948
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0008187545,
+        "predicted_median_seconds": 0.0007720186479676311,
+        "relative_error": -0.05708164294958858,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.1105945014090964,
+          0.08425245333245959
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 11.240373305999999,
+        "predicted_median_seconds": 11.040968019566527,
+        "relative_error": -0.01774009465744618,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.02970449306797803,
+          -0.009373948228165797
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 19.4613822505,
+        "predicted_median_seconds": 19.209163212541515,
+        "relative_error": -0.012959975540894909,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.022988284221618638,
+          0.004965433081800745
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "N",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 32.006429261,
+        "predicted_median_seconds": 31.46145600200399,
+        "relative_error": -0.017026993375361055,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.02161266502705374,
+          -0.0015087449769711962
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0004456265,
+        "predicted_median_seconds": 0.00038941527240640266,
+        "relative_error": -0.12613977757964878,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.23780885017893824,
+          0.008815187089544195
+        ],
+        "interval_pass": false
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.000576915,
+        "predicted_median_seconds": 0.0005608560774724306,
+        "relative_error": -0.02783585541642949,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.12525196015298662,
+          0.0530451845506804
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.0007781935,
+        "predicted_median_seconds": 0.0008180172850714724,
+        "relative_error": 0.051174656523695426,
+        "point_pass": true,
+        "error_interval_95": [
+          0.017304740467132512,
+          0.0861128339463797
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.8769210275,
+        "predicted_median_seconds": 1.8808643155618343,
+        "relative_error": 0.002100934458114496,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.011082359423936797,
+          0.024485885305958226
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.8590747705,
+        "predicted_median_seconds": 1.8829961016708743,
+        "relative_error": 0.012867331400791748,
+        "point_pass": true,
+        "error_interval_95": [
+          0.004271403748671148,
+          0.023051330371246924
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "E",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 1.8211994055,
+        "predicted_median_seconds": 1.886193780834434,
+        "relative_error": 0.035687676559827415,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.017123772444780534,
+          0.05477785095054708
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.002568787,
+        "predicted_median_seconds": 0.0026180254453877943,
+        "relative_error": 0.019167975152394656,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.05105910438400832,
+          0.0615127891738889
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.007362634999999999,
+        "predicted_median_seconds": 0.007154689322208922,
+        "relative_error": -0.028243377240767326,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.09564768061048606,
+          0.018118648803103297
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "selective",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 0.013619131,
+        "predicted_median_seconds": 0.013959685137440614,
+        "relative_error": 0.025005570284962697,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.013419518963984103,
+          0.046900367255128764
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 0,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.3623613629999998,
+        "predicted_median_seconds": 2.3175786323213448,
+        "relative_error": -0.018956765624453288,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.03290397333670279,
+          0.012023880214130362
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 2,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.443702805,
+        "predicted_median_seconds": 2.4266867612066516,
+        "relative_error": -0.006963221451697119,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.01978509854492448,
+          0.0075480691271102044
+        ],
+        "interval_pass": true
+      },
+      {
+        "arm": "D",
+        "query": "full",
+        "renewals": 5,
+        "n": 100000,
+        "histories": 30,
+        "observed_median_seconds": 2.5809403665,
+        "predicted_median_seconds": 2.590348954534611,
+        "relative_error": 0.003645410857504547,
+        "point_pass": true,
+        "error_interval_95": [
+          -0.011468335832801583,
+          0.01690961057753379
+        ],
+        "interval_pass": true
+      }
+    ],
+    "point_passes": 18,
+    "median_absolute_relative_error": 0.022086772718678677,
+    "max_absolute_relative_error": 0.13178541600971458,
+    "negative_errors": 11,
+    "every_stratum_has_pass": true,
+    "interval_passes": 16
+  }
+}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/revision/release/validate_results.py
+liboqs-python faulthandler is disabled
+{
+  "release_unchanged": true,
+  "timing_order_checks_passed": true,
+  "evaluation_observations": 1080,
+  "successful_histories": 162,
+  "public_selective_proofs_reverified": 486,
+  "archive_ledgers_reconciled": 162,
+  "balance": {
+    "N": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    },
+    "E": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    },
+    "D": {
+      "task_position_cells": 36,
+      "observations_each": 5,
+      "ordered_predecessor_pairs": 30,
+      "pairs_each": 5,
+      "mode_first_second": [
+        90,
+        90
+      ]
+    }
+  },
+  "external_snapshot_is_public_preregistration": false,
+  "external_snapshot_is_trusted_timestamp": false,
+  "complete_full_archives_retained": false,
+  "scope": "Code and data consistency audit by executing assistant, not independent human review"
+}
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /tmp/vital_q_full_scale_20261012/make_figures.py
++ /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/.venv/bin/python /workspace/scratch/00b4c1614093/reproduction_repo/vital-q/scripts/checkpoint.py /tmp/vital_q_full_scale_20261012/revision
+{"checkpoint": "ok", "files": 1013}
+COMPLETE: /tmp/vital_q_full_scale_20261012

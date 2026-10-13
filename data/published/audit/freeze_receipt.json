@@ -1,0 +1,9 @@
+{
+  "local_time_unix": 1791856466.802367,
+  "release_manifest_sha256": "0319e0aaa962894ccf7024c3e22eb39fc42c3db415762af26f8481f13562f1c9",
+  "human_review": "Arindam Chakraborty named as reviewer by author; original review date and scope unspecified; no pre-evaluation human approval claimed for version 4",
+  "trust": "Local clock; separate hosted snapshot receipt required before evaluation",
+  "prior_results_known": true,
+  "evaluation_size_previously_exercised": true,
+  "refreeze_note": "environment.json execution_agent field reworded on 2026-10-13 and the release manifest regenerated; measurements, code and all other release files unchanged"
+}

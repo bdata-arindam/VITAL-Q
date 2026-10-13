@@ -1,0 +1,43 @@
+{
+  "scope": "Numerical reanalysis of supplied measurements and timing unit tests; no fresh benchmark or independent external replication",
+  "frozen_release_files_checked": 25,
+  "frozen_release_hashes_match": true,
+  "development_observations": 864,
+  "evaluation_observations": 1080,
+  "histories": 162,
+  "coefficient_refit_matches": true,
+  "training_rows": 432,
+  "training_cells": 36,
+  "bootstrap_draws": 10000,
+  "replayed_numeric_fields_matching_saved_analysis": 2092,
+  "retained_selective_proof_files": 486,
+  "qualification_record": {
+    "recorded_passes": 233,
+    "cryptographic_qualification_rerun_in_this_check": false
+  },
+  "timer_tests": {
+    "rerun": true,
+    "passed": 2,
+    "output": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.000s\n\nOK\n"
+  },
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "inputs_sha256": {
+    "revision/measured/development.jsonl": "bba11af1d50762a57167f0d4f46b2b8a16a95df0d63cc122825373f3f73fd1a7",
+    "revision/measured/evaluation.jsonl": "e9e23695cf49554f8093fc2c9997af0fb4242ea286cad8ccdbcc5e71909cbdc6",
+    "revision/release/models.json": "b484e87a96718ce3b48a0d0005dc4ecc3acdec51ae425e9ca3f2b94667bfd543",
+    "revision/results/analysis.json": "934b3707752e6151451d02bd2e567f2b1fd169bf972261edeb7e8bf9c8bc88d9"
+  },
+  "results": {
+    "balanced": {
+      "corrected_mare_percent": 1.631558838409669,
+      "corrected_passes": 18,
+      "bytes_only_mare_percent": 39.859187721966094
+    },
+    "isolated": {
+      "corrected_mare_percent": 2.5545330928943804,
+      "corrected_passes": 18,
+      "bytes_only_mare_percent": 39.228849480818404
+    }
+  }
+}

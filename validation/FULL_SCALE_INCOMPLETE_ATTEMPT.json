@@ -1,0 +1,68 @@
+{
+  "status": "incomplete",
+  "successful_histories": 53,
+  "failed_histories": [
+    {
+      "archive_bytes": 185380363,
+      "archive_sha256": "3687ef23e1e1314da4758f18a6647362d0e741af5c947488eb5d7abb1a679839",
+      "arm": "N",
+      "arm_order": 2,
+      "barrier_count": 48,
+      "block_id": "fresh-a166db251e3d-v42-development-10000-05",
+      "campaign_seconds": 5.204246717001297,
+      "condition_observations": 12,
+      "finished_unix": 1791831350.0675328,
+      "history_id": "fresh-a166db251e3d-v42-development-10000-05-N",
+      "manifest_set_sha256": "d8b698463fbf031e1d71af954ddc3daf0e99ee2c8a1a2e0fcabc60b5ac1f99b6",
+      "max_rss_bytes": 57344000,
+      "mode_order": [
+        "isolated",
+        "balanced"
+      ],
+      "n": 10000,
+      "phase": "development",
+      "query_id": 5826,
+      "reason": "OSError(39, 'Directory not empty')",
+      "retained": "all three selective proofs and public enrollment policy",
+      "started_unix": 1791831330.3332815,
+      "status": "failed",
+      "task_order": [
+        [
+          5,
+          "selective"
+        ],
+        [
+          0,
+          "full"
+        ],
+        [
+          5,
+          "full"
+        ],
+        [
+          0,
+          "selective"
+        ],
+        [
+          2,
+          "selective"
+        ],
+        [
+          2,
+          "full"
+        ]
+      ],
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/00b4c1614093/full_scale_execution/run_20261012/revision/release/campaign.py\", line 91, in run_phase\n    shutil.rmtree(dest)\n  File \"<python-prefix>/lib/python3.12/shutil.py\", line 759, in rmtree\n    _rmtree_safe_fd(stack, onexc)\n  File \"<python-prefix>/lib/python3.12/shutil.py\", line 703, in _rmtree_safe_fd\n    onexc(func, path, err)\n  File \"<python-prefix>/lib/python3.12/shutil.py\", line 662, in _rmtree_safe_fd\n    os.rmdir(name, dir_fd=dirfd)\nOSError: [Errno 39] Directory not empty: PosixPath('/workspace/scratch/00b4c1614093/full_scale_execution/run_20261012/revision/work/fresh-a166db251e3d-v42-development-10000-05-N')\n"
+    }
+  ],
+  "last_checkpoint": {
+    "provider": "local filesystem",
+    "path": "/workspace/scratch/00b4c1614093/full_scale_execution/run_20261012/checkpoints/latest.zip",
+    "saved_unix": 1791831330.1814725,
+    "sha256": "0d2bb348286d833197f68a19919c3110b9200ce82ed5e225fbed894b3f674c49",
+    "files": 349,
+    "independent_backup": false,
+    "trusted_timestamp": false
+  },
+  "action": "Preserved original attempt. Restarted full workflow with unchanged runner and scientific code in a new /tmp output directory, avoiding the workspace filesystem for disposable benchmark files. No observations imported from this attempt into the restarted run."
+}

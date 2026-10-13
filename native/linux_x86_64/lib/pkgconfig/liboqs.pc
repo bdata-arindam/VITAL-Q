@@ -1,0 +1,10 @@
+prefix=/workspace/scratch/c336c10b6752/experiment/oqs_install
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: liboqs
+Description: Library for quantum-safe cryptographic algorithms
+Version: 0.16.0
+Requires.private: 
+Cflags: -I${includedir}
+Libs: -L${libdir} -loqs

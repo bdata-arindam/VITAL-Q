@@ -1,0 +1,7 @@
+{
+  "phase": "evaluation",
+  "status": "ok",
+  "start_unix": 1790355591.1319485,
+  "end_unix": 1790362948.6508386,
+  "execution": "Private directory; durable synchronous checkpoints after every completed history; no concurrent measurement workers"
+}

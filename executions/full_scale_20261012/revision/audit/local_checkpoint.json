@@ -1,0 +1,9 @@
+{
+  "provider": "local filesystem",
+  "path": "/tmp/vital_q_full_scale_20261012/checkpoints/latest.zip",
+  "saved_unix": 1791838660.2680867,
+  "sha256": "dc3f8d4737d9e4e624899fc3566c9aed2fa5ff6bd64d3ca7f3ebef017636eb1a",
+  "files": 1013,
+  "independent_backup": false,
+  "trusted_timestamp": false
+}

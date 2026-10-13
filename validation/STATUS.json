@@ -1,0 +1,62 @@
+{
+  "scope": "Primary latency-study reproduction; internal packaging validation, not independent empirical replication",
+  "setup_clean_venv": "PASS",
+  "published_numerical_fields_matched": 2092,
+  "original_notebook_cells_reexecuted": 6,
+  "notebook_engine": "sequential Python, shared namespace in isolated subprocess; Jupyter kernel unavailable in sandbox",
+  "retained_original_proofs_reverified": 486,
+  "published_figure_pixel_match": true,
+  "journaled_smoke_workflow": "PASS",
+  "smoke_histories": 162,
+  "smoke_development_rows": 864,
+  "smoke_evaluation_rows": 1080,
+  "smoke_qualification_checks": 233,
+  "smoke_proofs_verified": 486,
+  "smoke_sizes": [
+    32,
+    128,
+    256
+  ],
+  "journal_recovery_and_alteration_rejection": "PASS",
+  "failed_pre_journal_trials": "Disclosed in VALIDATION.md and INCOMPLETE_ROW_GUARD.json; no missing observations fabricated",
+  "full_scale_fresh_workflow": "PASS",
+  "full_scale_sizes": [
+    1000,
+    10000,
+    100000
+  ],
+  "docker_build": "NOT_EXECUTED_DOCKER_UNAVAILABLE",
+  "historical_mhealth_case": "NOT_RERUN",
+  "manuscript_modified": false,
+  "original_reference_files_unchanged": true,
+  "automatic_interrupted_run_resume": false,
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "replay_from_extracted_delivery_zip": "PASS",
+  "extracted_replay_uses_clean_setup_environment": true,
+  "full_scale_histories": 162,
+  "full_scale_development_rows": 864,
+  "full_scale_evaluation_rows": 1080,
+  "full_scale_proofs_verified": 486,
+  "full_scale_qualification_checks": 233,
+  "full_scale_metrics": {
+    "balanced": {
+      "fresh_median_absolute_relative_error_percent": 2.1201650742763376,
+      "published_median_absolute_relative_error_percent": 1.631558838409669,
+      "fresh_bytes_only_error_percent": 38.14484753989789,
+      "fresh_point_passes": 18,
+      "fresh_interval_passes": 17,
+      "fresh_support_rule_passed": true
+    },
+    "isolated": {
+      "fresh_median_absolute_relative_error_percent": 2.2086772718678676,
+      "published_median_absolute_relative_error_percent": 2.5545330928943804,
+      "fresh_bytes_only_error_percent": 37.07147736093728,
+      "fresh_point_passes": 18,
+      "fresh_interval_passes": 16,
+      "fresh_support_rule_passed": true
+    }
+  },
+  "full_scale_output": "executions/full_scale_20261012",
+  "full_scale_elapsed_minutes": 121.20544597307841,
+  "full_scale_incomplete_attempt": "Disclosed in FULL_SCALE_INCOMPLETE_ATTEMPT.json; restarted from scratch in /tmp with unchanged runner; no measurements reused"
+}

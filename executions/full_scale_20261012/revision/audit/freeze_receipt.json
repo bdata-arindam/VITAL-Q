@@ -1,0 +1,8 @@
+{
+  "local_time_unix": 1791831797.7995942,
+  "release_manifest_sha256": "39b86addc3a86d63c6da23ab6be84f0900febaf38d8f85e4f8de8fc3f16b4f30",
+  "human_review": "No human review claimed by this runner",
+  "trust": "Local integrity snapshot, not public preregistration or trusted time",
+  "prior_results_known": true,
+  "evaluation_size_previously_exercised": true
+}
